@@ -1,14 +1,10 @@
 import time
-import cv2
 
 set_time = int(input("input time in second"))
 
 print(set_time)
 last_time = time.time()
-while set_time:
-    image = cv2.VideoCapture(0)
-    cv2.imshow("video", image)
-    cv2.waitKey(1)
+while set_time >= 0:
     current_time = time.time()
     if current_time - last_time >= 1:
         last_time = current_time
