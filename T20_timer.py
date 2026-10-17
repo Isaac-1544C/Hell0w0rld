@@ -1,14 +1,13 @@
 import time
 
-set_time = int(input("input time in second"))
+set_time = int(input("input time in second:\n"))
 
-print(set_time)
 last_time = time.time()
-while set_time >= 0:
-    current_time = time.time()
-    if current_time - last_time >= 1:
-        last_time = current_time
-        set_time -= 1
-        print(set_time)
-
+for x in range(set_time, 0, -1):
+    seconds = x % 60
+    minutes = (x // 60) % 60
+    hours = x // 3600
+    print(f"{hours:02}:{minutes:02}:{seconds:02}")
+    time.sleep(1)
+        
 print("time's up")
