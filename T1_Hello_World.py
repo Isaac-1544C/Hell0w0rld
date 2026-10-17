@@ -1,1 +1,0 @@
-print("H3c110, W0r1d!\n")#Hello world
