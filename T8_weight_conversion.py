@@ -17,4 +17,3 @@ while 1:
         break
     else:
         print(f"{unit} was not valid")
-
