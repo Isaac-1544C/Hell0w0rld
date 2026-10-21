@@ -1,4 +1,3 @@
-
 principle = 0.0
 while principle <= 0:
     principle = float(input("Enter Priciple:"))

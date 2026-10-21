@@ -77,3 +77,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#normal: a, b, c, d, e, f, g....
+#abnormal: 3, fghdsJKO,  ,
+#extreme: Q, E, X...

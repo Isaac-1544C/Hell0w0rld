@@ -57,7 +57,7 @@ def main():
                 balance -= withdraw(balance)
             case '4':
                 is_running = False
-            case _:
+            case _:#finally, else etc.
                 print("That's not a valid choice")
 
     print("Thank you! Have a nice day!")
@@ -67,4 +67,4 @@ if __name__ == '__main__':
 
 #normal: 1; 2, 1000; 3, 100; 4
 #abnormal: s; 2, s; 3, k; 4
-#extreme: 1; 2, 0; 3, 0; 4 
+#extreme: 2, 0; 3, 0; 4 
