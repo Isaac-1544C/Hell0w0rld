@@ -16,7 +16,7 @@ for key, value in menu.items():
     print(f"{key:10}: ${value:.2f}")
 print('\n')
 
-while True:
+while 1:
     food = input("Select an item (q to quit): ").lower()
     #ensure it's in lowercase
     if food == "q":

@@ -82,7 +82,7 @@ def main():
             display_word(answer)
             print(f"you lose with {wrong_guesses} wrong guesses")
             print(f"you have guessed {guessed_letters}")
-            is_running = False
+            break
 
 if __name__ == "__main__":
     main()
