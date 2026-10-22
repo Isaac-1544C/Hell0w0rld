@@ -6,7 +6,6 @@ while principle <= 0:
     #make sure > 0
         print("can't be <= 0")
 
-
 rate = 0.0
 while rate <= 0:
     rate = float(input("Enter Rate:"))
@@ -14,7 +13,6 @@ while rate <= 0:
     if rate <= 0:
     #make sure > 0
         print("can't be <= 0")
-    
 
 time = 0
 while time <= 0:
