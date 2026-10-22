@@ -22,7 +22,9 @@ for question in questions:
         print(option)
 
     guess = input("Enter (A, B, C, D): ").upper()
+    #make sure it's capital
     guesses.append(guess)
+    #store the answers for each round
     if guess == answers[question_num]:
         score += 1
         print("correct")
@@ -44,4 +46,5 @@ for guess in guesses:
 print()
 
 score = int(score / len(questions) * 100)
+#percentage
 print(f"Your score is: {score}%")

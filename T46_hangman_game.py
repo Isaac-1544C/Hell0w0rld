@@ -29,24 +29,30 @@ def display_man(wrong_guesses):
     print("**********")
     for line in hangman_art[wrong_guesses]:
         print(line)
+        #print by lines
     print("**********")
 
 def display_word(word):
     print(" ".join(word))
+    #divide by spaces
 
 def main():
     answer = random.choice(words)
     hint = ["_"] * len(answer)
+    #blanks
     wrong_guesses = 0
     guessed_letters = set()
-    is_running = True
+    #set, can be appended, without repeating elements
 
-    while is_running:
+    while 1:
         display_man(wrong_guesses)
+        #more wrong_guuesses, more complete the man is
         display_word(hint)
         guess = input("Enter a letter: ").lower()
+        #ensure lowercase
 
         if len(guess) != 1 or not guess.isalpha():
+            #ensure only 1 letter
             print("Invalid input")
             continue
 
@@ -55,6 +61,7 @@ def main():
             continue
 
         guessed_letters.add(guess)
+        #append
 
         if guess in answer:
             for i in range(len(answer)):
@@ -64,11 +71,13 @@ def main():
             wrong_guesses += 1
 
         if "_" not in hint:
+            #all solved
             display_man(wrong_guesses)
             display_word(answer)
             print("you win")
-            is_running = False
+            break
         elif wrong_guesses >= len(hangman_art) - 1:
+            #lose
             display_man(wrong_guesses)
             display_word(answer)
             print(f"you lose with {wrong_guesses} wrong guesses")

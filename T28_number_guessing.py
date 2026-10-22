@@ -2,6 +2,7 @@ import random
 
 lowest_num = 1
 highest_num = 500
+#range
 answer = random.randint(lowest_num, highest_num)
 guesses = 0
 is_running = True
@@ -14,10 +15,12 @@ while is_running:
     guess = input("enter your guess: \n")
 
     if guess.isdigit():
+        #ensure digit
         guess = int(guess)
         guesses += 1
 
         if guess < lowest_num or guess > highest_num:
+            #out of range
             print("out of range")
             print(f"please select a number between {lowest_num} and {highest_num}")
         elif guess < answer:
@@ -29,5 +32,6 @@ while is_running:
             print(f"number of guesses: {guesses}")
             is_running = False
     else:
+        #prevent valueerror
         print("invalid guess")
         print(f"please select a number between {lowest_num} and {highest_num}")

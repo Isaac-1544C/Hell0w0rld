@@ -3,6 +3,7 @@ import random
 def spin_row():
     symbols = ['A', 'B', 'C', 'D', 'E']
     return [random.choice(symbols) for _ in range(3)]
+    #randomly choose 3 in random order
 
 def print_row(row):
     print("**************")
@@ -11,6 +12,7 @@ def print_row(row):
 
 def get_payout(row, bet):
     if row[0] == row[1] == row[2]:
+        #prize amount
         if row[0] == 'A':
             return bet * 3
         elif row[0] == 'B':
@@ -25,6 +27,7 @@ def get_payout(row, bet):
 
 def main():
     balance = 100
+    #initial balance
 
     print("*************************")
     print("Welcome to Python Slots ")
@@ -37,16 +40,19 @@ def main():
         bet = input("Place your bet amount: ")
 
         if not bet.isdigit():
+            #ensure digit, prevent valueerror
             print("That's not a valid number")
             continue
 
         bet = int(bet)
 
         if bet > balance:
+            #ensure balance >= 0
             print("Insufficient funds")
             continue
 
         if bet <= 0:
+            #ensure positive
             print("Bet must be greater than 0")
             continue
 
@@ -66,11 +72,13 @@ def main():
         balance += payout
 
         play_again = input("Do you want to spin again? (Y/N): ").upper()
+        #ensure capital
 
         if play_again == 'N':
             break
         elif play_again != 'Y':
             print("invalid, continue")
+            #until user confirm to exit
         else:
             print("continue")
 
